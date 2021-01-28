@@ -4,7 +4,7 @@ const utils = require('./utils');
 
 exports.handler = async (event, context, callback) => {
   /**
-  @param {object} _meta - contains meta site data as well as a full list of site files
+  @param {_meta} object - contains meta site data and a list of all site files being published
   */
   const response = {
     isBase64Encoded: false,
