@@ -2,6 +2,8 @@
 
 This is a lambda function template you can use to run on site publishing events in Drzzle. What this does is loop through all  site files, downloads each one to lambda's `tmp/` folder for uploading elsewhere. You control where your files go!
 
+The callback to keep in mind here is the [onFileCreated](https://github.com/drzzle-app/site-publish-hook/blob/master/utils/index.js#L5) function. In this callback, you have a file buffer ready to go along with the path needed to be uploaded on your server. Here you can do the work needed for the upload.
+
 ### Prerequisite
 All of this can be automated better in the future but for now, make sure you have created an empty lambda function in your AWS account using the latest node version. To make this easiest, title it `site-publish-hook`. If using a different name, be sure to update it in the deploy.sh file and in API Gateway.
 

@@ -1,7 +1,7 @@
 {
   "name": "site-publish-hook",
   "version": "1.0.0",
-  "description": "Lambda function templage for uploading site files to a server on publish",
+  "description": "Lambda function templage for uploading site files to a server on publish events.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
