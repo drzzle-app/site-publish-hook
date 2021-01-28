@@ -2,13 +2,13 @@
 
 This is a lambda function template you can use to run on site publishing events in Drzzle. What this does is loop through all  site files, downloads each one to lambda's `tmp/` folder for uploading elsewhere. You control where your files go!
 
-The callback to keep in mind here is the [onFileCreated](https://github.com/drzzle-app/site-publish-hook/blob/master/utils/index.js#L5) function. In this callback, you have a file buffer ready to go along with the path needed to be uploaded on your server. Here you can do the work needed for the upload.
+The callback to keep in mind here is the [onFileCreated](https://github.com/drzzle-app/site-publish-hook/blob/master/utils/index.js#L7) function. In this callback, you have a file buffer ready to go along with the path needed to be uploaded on your server. Here you can do the work needed for the upload.
 
 ### Prerequisite
-All of this can be automated better in the future but for now, make sure you have created an empty lambda function in your AWS account using the latest node version. To make this easiest, title it `site-publish-hook`. If using a different name, be sure to update it in the deploy.sh file and in API Gateway.
+All of this can be automated better in the future but for now, make sure you have created an empty lambda function in your AWS account using the latest node version. To make this easiest, title it `site-publish-hook`. If using a different name, be sure to update it in the aws.yml file and in API Gateway.
 
 ### API Gateway
-To invoke this function, you will need to set up a **REST API** using `API Gateway`. Follow the steps below to do so:
+To invoke this function, you will need to set up a **REST API** using `API Gateway`. Follow the steps below to do so manually:
 
 1. In your AWS dashboard, find API Gateway and click "Create API".
 2. Find "REST API" and hit build.
@@ -27,7 +27,7 @@ After the API is deployed, head over to Drzzle and add a new webhook in your sit
 ![app screenshot](./app-screenshot.png)
 
 ### Deployment
-We included a simple bash script (`deploy.sh`) to zip this function up and auto upload it to your AWS account. You will need to have the AWS CLI installed first to use it. [See instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) for installing the CLI.
+We included a simple node script (`deploy.js`) to zip this function up and auto upload it to your AWS account. You will need to have the AWS CLI installed first to use it. [See instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) for installing the CLI.
 
 ```bash
 npm run deploy

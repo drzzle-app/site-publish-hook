@@ -1,0 +1,10 @@
+lambda:
+  function-name: 'site-publish-hook'
+  region: 'us-west-2'
+  files:
+    - 'index.js'
+    - 'package.json'
+    - 'utils'
+  variables:
+    BUCKET_NAME: 'site-publish-hook'
+    BUCKET_REGION: 'us-west-2'
