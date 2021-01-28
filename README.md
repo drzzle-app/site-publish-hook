@@ -26,7 +26,7 @@ After the API is deployed, head over to Drzzle and add a new webhook in your sit
 
 ![app screenshot](./app-screenshot.png)
 
-### Deployment
+### Deploying Function
 We included a simple node script (`deploy.js`) to zip this function up and auto upload it to your AWS account. You will need to have the AWS CLI installed first to use it. [See instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) for installing the CLI.
 
 ```bash
