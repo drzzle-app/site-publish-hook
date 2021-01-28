@@ -20,6 +20,7 @@ fi
 mkdir dist
 cp -a index.js dist/index.js
 cp -a package.json dist/package.json
+cp -aR utils dist/utils
 
 # install production node modules
 cd dist
@@ -34,8 +35,8 @@ rm -rf dist/
 echo "uploading to lambda..."
 
 # upload zip to lambda
-aws lambda update-function-code --function-name NAME_HERE --zip-file $file --region us-west-2
-aws lambda update-function-configuration --function-name NAME_HERE --handler "dist/index.handler" --region us-west-2
+aws lambda update-function-code --function-name site-publish-hook --zip-file $file --region us-west-2
+aws lambda update-function-configuration --function-name site-publish-hook --handler "dist/index.handler" --region us-west-2
 
 # remove uneeded dist and package if it exists
 if [ -e dist.zip ]

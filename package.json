@@ -1,7 +1,7 @@
 {
   "name": "site-publish-hook",
   "version": "1.0.0",
-  "description": "Lambda function for uploading site files to server on publish",
+  "description": "Lambda function templage for uploading site files to a server on publish",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,8 @@
     "drzzle",
     "publisher"
   ],
-  "author": "Drzzle",
-  "license": "ISC",
+  "author": "Drzzle Devs",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.3.0",
