@@ -5,6 +5,7 @@ module.exports = {
   'rules': {
     'global-require': 0,
     'import/no-unresolved': 0,
+    'no-console': 0,
     'no-param-reassign': [
       'error', {
         'props': true,
