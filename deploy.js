@@ -63,7 +63,7 @@ const command = cmd => new Promise((res, rej) => {
     await command(`aws lambda update-function-code --function-name ${lambda['function-name']} --zip-file fileb://${__dirname}/dist.zip --region ${lambda.region}`);
 
     spinner.text = 'Updating function configuration...';
-    await command(`aws lambda update-function-configuration --function-name ${lambda['function-name']} --handler "dist/index.handler" ${vars} --region ${lambda.region}`);
+    await command(`aws lambda update-function-configuration --function-name ${lambda['function-name']} --handler "dist/index.handler" ${vars} --region ${lambda.region} --timeout ${lambda.timeout}`);
 
     // remove zip when all is done
     await fs.remove('./dist.zip');

@@ -1,6 +1,7 @@
 lambda:
   function-name: 'site-publish-hook'
   region: 'us-west-2'
+  timeout: 300
   files:
     - 'index.js'
     - 'package.json'
